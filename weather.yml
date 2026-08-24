@@ -1,0 +1,29 @@
+name: Update VRChat Weather Cache
+
+on:
+  schedule:
+    - cron: '*/15 * * * *' # Wakes up automatically every 15 minutes
+  workflow_dispatch: # Allows you to force a manual refresh anytime
+
+permissions:
+  contents: write # Gives the script permission to update files in your repo
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Fetch Live Weather JSON
+        run: |
+          # Replace LOX/154,44 with your specific city's Grid ID and X,Y coordinates
+          curl -s -A "VRChatWeatherBot/1.0" "https://weather.gov" -o weather.json
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "Weather Bot"
+          git config --global user.email "bot@github.com"
+          git add weather.json
+          git commit -m "Update live weather payload" || exit 0
+          git push
