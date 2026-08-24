@@ -17,7 +17,7 @@ jobs:
 
       - name: Fetch Live Weather JSON
         run: |
-          curl -s -A "VRChatWeatherBot/1.0" "https://weather.gov" -o weather.json
+          curl -s -A "VRChatWeatherBot/1.0" "https://api.weather.gov/gridpoints/MTR/95,83/forecast/hourly" -o weather.json
 
       - name: Commit and Push Changes
         run: |
