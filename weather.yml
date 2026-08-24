@@ -17,7 +17,6 @@ jobs:
 
       - name: Fetch Live Weather JSON
         run: |
-          # Replace LOX/154,44 with your specific city's Grid ID and X,Y coordinates
           curl -s -A "VRChatWeatherBot/1.0" "https://weather.gov" -o weather.json
 
       - name: Commit and Push Changes
