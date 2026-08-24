@@ -40,9 +40,9 @@
     "properties": {
         "units": "us",
         "forecastGenerator": "HourlyForecastGenerator",
-        "generatedAt": "2026-08-24T20:24:14+00:00",
-        "updateTime": "2026-08-24T18:27:15+00:00",
-        "validTimes": "2026-08-24T12:00:00+00:00/P7DT13H",
+        "generatedAt": "2026-08-24T20:57:43+00:00",
+        "updateTime": "2026-08-24T20:26:44+00:00",
+        "validTimes": "2026-08-24T14:00:00+00:00/P7DT11H",
         "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 50.9016
