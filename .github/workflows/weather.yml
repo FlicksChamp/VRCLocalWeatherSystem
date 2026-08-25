@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Fetch Live Weather JSON
-        run: echo '{"properties":{"periods":[{"shortForecast":"Rain","temperature":45,"isDaytime":false}]}}' > weather.json
+        run: echo '{"properties":{"periods":[{"shortForecast":"Clear"}]}}' > weather.json
 
       - name: Commit and Push Changes
         run: |
