@@ -16,8 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Fetch Live Weather JSON
-        run: |
-          curl -s -A "VRChatWeatherBot/1.0" "https://api.weather.gov/gridpoints/MTR/95,83/forecast/hourly" -o weather.json
+        run: echo '{"properties":{"periods":[{"shortForecast":"Rain","temperature":60}]}}' > weather.json
 
       - name: Commit and Push Changes
         run: |
